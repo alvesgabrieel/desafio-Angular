@@ -8,6 +8,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+a,
+a:visited {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+
 h1,
 h2,
 h3,
@@ -282,14 +292,13 @@ p {
   border-radius: 4px;
 }
 
-.details-template div:nth-child(1),
-.resume-content div:nth-child(1) {
+.template-h3-content {
   height: 50px;
   background-color: #fdf1eb;
 }
 
-.details-template div:nth-child(1) h4,
-.resume-content div:nth-child(1) h4 {
+.template-h3 {
+  font-family: Quicksand, sans-serif;
   font-size: 20px;
   font-weight: bold;
   line-height: 25px;
@@ -304,13 +313,11 @@ p {
 }
 
 .resume,
-.discussion,
 .comments {
   grid-column: 1/4;
 }
 
 .resume-content {
-  font-family: Quicksand, sans-serif;
   font-size: 16px;
   height: 100%;
   width: 100%;
@@ -339,169 +346,129 @@ p {
   transition: height 0.3s ease;
 }
 
-.expanded {
-  height: auto;
+.comments-content {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
 }
 
-.content {
+.comments-send-topic {
   display: flex;
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 960px;
   flex-direction: column;
   align-items: center;
+  height: 224px;
+  gap: 24px;
 }
 
-svg.material-icons {
-  height: 24px;
-  width: auto;
+.comments-send-topic div:nth-child(1) {
+  margin-top: 24px;
 }
 
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
-.card-container {
+.comments-send-topic div:nth-child(2) {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
+  gap: 48px;
 }
 
-.card {
-  all: unset;
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
+.comments-send-topic div:nth-child(3) {
+  width: 800px;
 }
 
-.card-container .card:not(:last-child) {
-  margin-right: 0;
+.comments-send-topic h4 {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ed7839;
 }
 
-.card.card-small {
-  height: 16px;
-  width: 168px;
+.comments-send-topic p {
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: center;
 }
 
-.card-container .card:not(.highlight-card) {
+.comments-send-topic button {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-.card-container .card:not(.highlight-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+.custom-border {
+  background-image: linear-gradient(
+    to right,
+    transparent 40px,
+    #e7e7e7 0px,
+    #e7e7e7 97%,
+    transparent 90%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: bottom;
 }
 
-.card-container .card:not(.highlight-card):hover .material-icons path {
-  fill: rgb(105, 103, 103);
+.comments-topics {
+  margin-top: 16px;
+  padding: 16px 24px;
 }
 
-.card.highlight-card {
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-  border: none;
-  width: auto;
-  min-width: 30%;
-  position: relative;
+.comments-topics > div {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
 }
 
-.card.card.highlight-card span {
-  margin-left: 60px;
+.comments-topics div > h5 {
+  font-family: Quicksand, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #ed7839;
 }
 
-svg#rocket {
-  width: 80px;
-  position: absolute;
-  left: -10px;
-  top: -24px;
+.comments-topics div > p:nth-of-type(1) {
+  font-family: Quicksand, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+  color: #5c5c5c;
 }
 
-svg#rocket-smoke {
-  height: calc(100vh - 95px);
-  position: absolute;
-  top: 10px;
-  right: 180px;
-  z-index: -10;
+.comments-topics div > p:nth-of-type(2) {
+  font-family: Quicksand, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px 0;
 }
 
-a,
-a:visited,
-a:hover {
-  color: #1976d2;
-  text-decoration: none;
+.topics-actions {
+  display: flex;
+  gap: 15px;
 }
 
-a:hover {
-  color: #125699;
-}
-
-.terminal {
-  position: relative;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 6px;
-  padding-top: 45px;
-  margin-top: 8px;
-  overflow: hidden;
-  background-color: rgb(15, 15, 16);
-}
-
-.terminal::before {
-  content: "\2022 \2022 \2022";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background: rgb(58, 58, 58);
-  color: #c2c3c4;
-  width: 100%;
-  font-size: 2rem;
-  line-height: 0;
-  padding: 14px 0;
-  text-indent: 4px;
-}
-
-.terminal pre {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  color: white;
-  padding: 0 1rem 1rem;
-  margin: 0;
+.topics-actions div {
+  font-family: Segoe UI;
+  font-size: 14px;
+  line-height: 19px;
+  color: #757575;
+  font-weight: lighter;
 }
 
 footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
+  font-family: Quicksand, sans-serif;
+  margin-left: 222px;
+  margin-top: 48px;
 }
 
-footer a {
+footer > div {
   display: flex;
   align-items: center;
+  border-top: 1px solid #e7e7e7;
+  padding: 16px 0 0 16px;
 }
 
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
+footer div > div:nth-child(2) {
+  margin: 0px 0 32px 32px;
 }
 
 /* Responsive Styles */

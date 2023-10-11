@@ -103,8 +103,8 @@
 
   <div class="details">
     <div class="details-template">
-      <div>
-        <h4>Detalhes</h4>
+      <div class="template-h3-content">
+        <h3 class="template-h3">Detalhes</h3>
       </div>
       <div>
         <p>
@@ -157,8 +157,8 @@
 
   <div class="resume">
     <div class="resume-content">
-      <div>
-        <h4>Resumo</h4>
+      <div class="template-h3-content">
+        <h3 class="template-h3">Resumo</h3>
       </div>
       <div class="resume-content-paragraph" [class.expanded]="isExpanded">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae
@@ -187,7 +187,114 @@
       <button (click)="toggleContent()">{{ buttonText }}</button>
     </div>
   </div>
-  <div class="item discussion">send-comments</div>
-  <div class="item comments">comments</div>
-  <div class="item comments">comments</div>
+
+  <div class="comments">
+    <div class="comments-content">
+      <div class="template-h3-content">
+        <h3 class="template-h3">Discussões</h3>
+      </div>
+
+      <div class="comments-send-topic custom-border">
+        <div>
+          <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
+        </div>
+        <div>
+          <img src="assets/images/icone1.png" alt="icone 1 dos comentários" />
+          <img src="assets/images/icone2.png" alt="icone 1 dos comentários" />
+          <img src="assets/images/icone3.png" alt="icone 1 dos comentários" />
+        </div>
+        <div>
+          <p>
+            Sabia que o maior estímulo no desenvolvimento científico e cultural
+            é a curiosidade? Deixe seus questionamentos ou sugestões para o
+            autor!
+          </p>
+        </div>
+        <button>
+          <img
+            src="assets/images/botao-criar-topico.png"
+            alt="botão para criar um tópico"
+          />
+        </button>
+      </div>
+
+      <div class="comments-topics">
+        <div>
+          <h5>Assunto da pergunta aparece aqui</h5>
+          <p>Carlos Henrique Santos</p>
+          <p>
+            Comecinho da pergunta aparece aqui resente relato inscreve-se no
+            campo da análise da dimensão e impacto de processo formativo situado
+            impacto de processo formativo processo...
+          </p>
+          <div class="topics-actions">
+            <div>
+              <img
+                src="assets/images/mais-informacoes.png"
+                alt="botao de mais informações do tópico"
+              />
+            </div>
+            <div>
+              <img
+                src="assets/images/favoritar.png"
+                alt="botao de favoritar o tópico"
+              />
+            </div>
+            <div>1 like</div>
+            <div>1 resposta</div>
+          </div>
+        </div>
+        <Br />
+        <div>
+          <h5>Assunto da pergunta aparece aqui</h5>
+          <p>Carlos Henrique Santos</p>
+          <p>
+            Comecinho da pergunta aparece aqui resente relato inscreve-se no
+            campo da análise da dimensão e impacto de processo formativo situado
+            impacto de processo formativo processo...
+          </p>
+          <div class="topics-actions">
+            <div>
+              <img
+                src="assets/images/mais-informacoes.png"
+                alt="botao de mais informações do tópico"
+              />
+            </div>
+            <div>
+              <img
+                src="assets/images/favoritar.png"
+                alt="botao de favoritar o tópico"
+              />
+            </div>
+            <div>1 like</div>
+            <div>1 resposta</div>
+          </div>
+        </div>
+        <Br />
+      </div>
+    </div>
+  </div>
 </div>
+
+<footer>
+  <div>
+    <div>
+      <img src="assets/images/footer.png" alt="footer" />
+    </div>
+    <div>
+      <p>
+        <strong
+          >Preservar a memória do evento e ampliar o acesso ao conhecimento
+          científico</strong
+        >
+        gerado em eventos é a razão de ser da plataforma Galoá Proceedings.
+      </p>
+      <br />
+      <p>
+        Os tabalhos publicados aqui têm maior alcance e ficam disponíveis para
+        toda a cominidade científica, mantendo acesso o debate científico
+        fomentado pelos encontros e aumentando o impacto do evento.
+      </p>
+    </div>
+  </div>
+</footer>
