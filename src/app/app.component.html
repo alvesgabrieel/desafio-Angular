@@ -80,11 +80,114 @@
     Análise sensorial de preparações funcionais desenvolvidas para escolares
     entre 09 e 15 anos, do município de Campinas/SP
   </h2>
-  <div class="item buttons">buttons</div>
-  <div class="item banner">banner</div>
-  <div class="item details">details</div>
-  <div class="item resume">resume</div>
-  <div class="item send-comments">send-comments</div>
+
+  <div class="buttons">
+    <div>
+      <div>
+        <img
+          src="assets/images/download-button.png"
+          alt="botão para download"
+        />
+      </div>
+      <div><img src="assets/images/favorite-button.png" alt="favoritar" /></div>
+      <div><img src="assets/images/doi-button.png" alt="botao DOI" /></div>
+    </div>
+    <div>
+      <p>COMO CITAR ESSE TRABALHO?</p>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="assets/images/video.png" alt="Vídeo de Apresentação" />
+  </div>
+
+  <div class="details">
+    <div class="details-template">
+      <div>
+        <h4>Detalhes</h4>
+      </div>
+      <div>
+        <p>
+          Tipo de Apresentação: <strong>Pôster</strong> <br />
+          Eixo temático: <strong>Alimentação e saúde (AS)</strong> <br />
+          Palavras-chaves:
+          <strong>Alimentos funcionais, alimentação escolar</strong> <br />
+          <br />
+        </p>
+        <h3>Autores:</h3>
+        Galileo Galilei<sup><a href="#nota1" id="ref1">1</a></sup> <br />
+        Berta Lange<sup><a href="#nota2" id="ref2">2</a></sup> <br />
+        Isaac Newton<sup><a href="#nota3" id="ref3">3</a></sup> <br />
+        Cesar Lattes<sup><a href="#nota1" id="ref1">1</a></sup> <br />
+        Stephen Hawking<sup><a href="#nota4" id="ref4">5</a></sup> <br />
+        <ol>
+          <li id="nota1">
+            Universidade Estadual de Campinas
+            <a href="#ref1"></a>
+          </li>
+          <li id="nota2">
+            Universidade de São Paulo
+            <a href="#ref2"></a>
+          </li>
+          <li id="nota3">
+            Instituto Nacional de Pesquisas Espaciais
+            <a href="#ref3"></a>
+          </li>
+          <li id="nota4">
+            Universidade Federal do Rio de Janeiro
+            <a href="#ref4"></a>
+          </li>
+          <!-- Outras notas podem ser adicionadas aqui -->
+        </ol>
+        <br />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="resume">
+    <div class="resume-content">
+      <div>
+        <h4>Resumo</h4>
+      </div>
+      <div class="resume-content-paragraph" [class.expanded]="isExpanded">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae
+        turpis auctor, mollis felis ut, commodo turpis. Phasellus felis mauris,
+        egestas eget cursus et, iaculis quis lacus. Fusce auctor eros sed magna
+        ultricies gravida. Etiam aliquam dictum nisl, vel aliquet enim accumsan
+        sit amet. Donec finibus nisi tellus, ut viverra lorem vestibulum ut.
+        Phasellus condimentum orci id leo condimentum lobortis et non lorem. Sed
+        id nisl metus. Quisque sollicitudin ligula in sapien scelerisque, ac
+        gravida eros vestibulum Phasellus condimentum orci id leo condimentum
+        lobortis et non lorem. Sed id nisl metus. Quisque sollicitudin ligula in
+        sapien scelerisque, ac gravida eros vestibulum. Etiam aliquam dictum
+        nisl, vel aliquet enim accumsan sit ametl accumsantLorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Phasellus vitae turpis auctor, mollis
+        felis ut, commodo turpis. Phasellus felis mauris, egestas eget cursus
+        et, iaculis quis lacus. Fusce auctor eros sed magna ultricies gravida.
+        Etiam aliquam dictum nisl, vel aliquet enim accumsan sit amet. Donec
+        finibus nisi tellus, ut viverra lorem vestibulum ut. Phasellus
+        condimentum orci id leo condimentum lobortis et non lorem. Sed id nisl
+        metus. Quisque sollicitudin ligula in sapien scelerisque, ac gravida
+        eros vestibulum Phasellus condimentum orci id leo condimentum lobortis
+        et non lorem. Sed id nisl metus. Quisque sollicitudin ligula in sapien
+        scelerisque, ac gravida eros vestibulum. Etiam aliquam dictum nisl, vel
+        aliquet enim accumsan sit ametl accumsant
+      </div>
+      <button (click)="toggleContent()">{{ buttonText }}</button>
+    </div>
+  </div>
+  <div class="item discussion">send-comments</div>
   <div class="item comments">comments</div>
   <div class="item comments">comments</div>
 </div>
