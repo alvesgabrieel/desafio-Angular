@@ -406,6 +406,71 @@ p {
   background-position: bottom;
 }
 
+.comments-send-topic-screen2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.comments-send-topic-screen2 > div p {
+  font-family: Quicksand, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.comments-send-topic-screen2 form {
+  padding: 24px;
+}
+
+.comments-send-topic-screen2 form label {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: #ed7839;
+  padding: 10px 0 10px 0;
+}
+
+.comments-send-topic-screen2 form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-send-topic-screen2 form > div input {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  height: 39px;
+}
+
+.comments-send-topic-screen2 form > div textarea {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.comments-send-topic-screen2 form > div button {
+  height: 33px;
+  width: 21em;
+  background-image: linear-gradient(to bottom, #feb154, #f1833e);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: Quicksand;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.comments-send-topic-screen2 form > div:nth-child(3) {
+  display: flex;
+  align-items: end;
+  background-color: #eaf1f2;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
 .comments-topics {
   margin-top: 16px;
   padding: 16px 24px;
