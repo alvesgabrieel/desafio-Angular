@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  // title = 'DevChuva';
   isExpanded = false;
-  buttonText = 'Ver mais';
+  buttonText = 'ver mais';
 
   showForm = false;
 
@@ -20,10 +19,8 @@ export class AppComponent {
 
   toggleContent() {
     this.isExpanded = !this.isExpanded;
-    this.buttonText = this.isExpanded ? 'Ver menos' : 'Ver mais';
+    this.buttonText = this.isExpanded ? 'ver menos' : 'ver mais';
   }
-
-  //discussoes - lógica
 
   toggleForm() {
     this.showForm = !this.showForm;
@@ -42,6 +39,6 @@ export class AppComponent {
   }
 
   toggleComment() {
-    this.showComments = true
+    this.showComments = !this.showComments
   }
 }

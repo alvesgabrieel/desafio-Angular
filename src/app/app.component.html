@@ -1,13 +1,13 @@
 <!-- Sidebar -->
 
 <div class="sidebar">
-  <div class="title-container">
+  <div class="sidebar-title">
     <h1>SLACA 2019</h1>
   </div>
   <div>
     <img src="assets/images/logo.png" alt="logo-tipo" />
   </div>
-  <div class="menu-container">
+  <div class="sidebar-menu">
     <ul>
       <li>
         <a href="">Apresentação</a>
@@ -31,16 +31,16 @@
   </div>
 </div>
 
-<div class="menu">
+<div class="top-bar">
   <!-- Toolbar -->
-  <div class="header" role="banner">
+  <div class="top-bar-title" role="banner">
     <div>
       <p>Anais do Simpósio Latino Americano de Ciências de Alimentos</p>
       <p>Anais do 13º Simpósio Latino Americano de Ciência de Alimentos</p>
       <p>ISSN: 1234-5678</p>
     </div>
-    <div class="header-login">
-      <div class="select-container">
+    <div class="top-bar-actions">
+      <div class="language-selector">
         <select name="" id="">
           <option value="">PT, BR</option>
         </select>
@@ -50,7 +50,7 @@
           class="select-icon"
         />
       </div>
-      <div class="login-container">
+      <div class="user-info">
         <div>
           <p>Bem vindo!</p>
           <p>alguem12@galoascience.com</p>
@@ -66,13 +66,13 @@
   </div>
 </div>
 <!-- Main Content -->
-<div class="main-content">
-  <h2 class="title">
+<div class="content-section">
+  <h2 class="article-title">
     Análise sensorial de preparações funcionais desenvolvidas para escolares
     entre 09 e 15 anos, do município de Campinas/SP
   </h2>
 
-  <div class="buttons">
+  <div class="action-buttons">
     <div>
       <div>
         <img
@@ -88,11 +88,11 @@
     </div>
   </div>
 
-  <div class="banner">
+  <div class="article-banner">
     <img src="assets/images/video.png" alt="Vídeo de Apresentação" />
   </div>
 
-  <div class="details">
+  <div class="article-details">
     <div class="details-template">
       <div class="template-h3-content">
         <h3 class="template-h3">Detalhes</h3>
@@ -146,12 +146,12 @@
     </div>
   </div>
 
-  <div class="resume">
-    <div class="resume-content">
+  <div class="article-summary">
+    <div class="summary-content">
       <div class="template-h3-content">
         <h3 class="template-h3">Resumo</h3>
       </div>
-      <div class="resume-content-text" [class.expanded]="isExpanded">
+      <div class="summary-content-text" [class.expanded]="isExpanded">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae
         turpis auctor, mollis felis ut, commodo turpis. Phasellus felis mauris,
         egestas eget cursus et, iaculis quis lacus. Fusce auctor eros sed magna
@@ -192,7 +192,7 @@
         aliquet enim accumsan sit ametl accumsanteros sed magna ultricies gravida.
         Etiam aliquam.
       </div>
-      <button class="btn-show-more" (click)="toggleContent()">ver mais</button>
+      <button class="btn-show-more" (click)="toggleContent()">{{ buttonText }}</button>
     </div>
   </div>
 
@@ -202,7 +202,7 @@
         <h3 class="template-h3">Discussões</h3>
       </div>
 
-      <div class="comments-send-topic custom-border" *ngIf="!showForm && !formSubmitted">
+      <div class="comments-intro custom-border" *ngIf="!showForm && !formSubmitted">
         <div>
           <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
         </div>
@@ -225,7 +225,7 @@
       </div>
 
       <!-- screen 2 -->
-      <div *ngIf="showForm" class="comments-send-topic-screen2 custom-border">
+      <div *ngIf="showForm" class="comments-intro-screen2 custom-border">
         <div>
           <p>
             Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!
@@ -260,7 +260,7 @@
       </div>
 
       <!-- screen 3 (acknowledgment)-->
-      <div  *ngIf="formSubmitted" class="comments-send-topic-screen3 custom-border">
+      <div  *ngIf="formSubmitted" class="comments-intro-screen3 custom-border">
         <div>
           <h4>Seu tópico foi enviando com sucesso! :D</h4>
         </div> 
@@ -273,7 +273,7 @@
         </button>
       </div>
 
-      <div class="comments-topics">
+      <div class="comments-topics published-topics">
         <!-- comentario adicionado -->
         <div *ngIf="showTopic" class="answered-topic">
           <div class="overlay">
@@ -365,7 +365,7 @@
 
         <Br />
 
-        <div class="topics">
+        <div class="topics answered-topic">
           <h5>Assunto da pergunta aparece aqui</h5>
           <p>Carlos Henrique Santos</p>
           <p>
@@ -395,6 +395,7 @@
     </div>
   </div>
 </div>
+
 <footer>
   <div>
     <div>
