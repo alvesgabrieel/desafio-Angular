@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <!-- Sidebar -->
 
 <div class="sidebar">
@@ -160,7 +151,7 @@
       <div class="template-h3-content">
         <h3 class="template-h3">Resumo</h3>
       </div>
-      <div class="resume-content-paragraph" [class.expanded]="isExpanded">
+      <div class="resume-content-text" [class.expanded]="isExpanded">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae
         turpis auctor, mollis felis ut, commodo turpis. Phasellus felis mauris,
         egestas eget cursus et, iaculis quis lacus. Fusce auctor eros sed magna
@@ -182,9 +173,26 @@
         eros vestibulum Phasellus condimentum orci id leo condimentum lobortis
         et non lorem. Sed id nisl metus. Quisque sollicitudin ligula in sapien
         scelerisque, ac gravida eros vestibulum. Etiam aliquam dictum nisl, vel
-        aliquet enim accumsan sit ametl accumsant
+        aliquet enim accumsan sit ametl accumsanteros sed magna ultricies gravida.
+        Etiam aliquam dictum nisl, vel aliquet enim accumsan sit amet. Donec
+        finibus nisi tellus, ut viverra lorem vestibulum ut. Phasellus
+        condimentum orci id leo condimentum lobortis et non lorem. Sed id nisl
+        metus. Quisque sollicitudin ligula in sapien scelerisque, ac gravida
+        eros vestibulum Phasellus condimentum orci id leo condimentum lobortis
+        et non lorem. Sed id nisl metus. Quisque sollicitudin ligula in sapien
+        scelerisque, ac gravida eros vestibulum. Etiam aliquam dictum nisl, vel
+        aliquet enim accumsan sit ametl accumsanteros sed magna ultricies gravida.
+        Etiam aliquam dictum nisl, vel aliquet enim accumsan sit amet. Donec
+        finibus nisi tellus, ut viverra lorem vestibulum ut. Phasellus
+        condimentum orci id leo condimentum lobortis et non lorem. Sed id nisl
+        metus. Quisque sollicitudin ligula in sapien scelerisque, ac gravida
+        eros vestibulum Phasellus condimentum orci id leo condimentum lobortis
+        et non lorem. Sed id nisl metus. Quisque sollicitudin ligula in sapien
+        scelerisque, ac gravida eros vestibulum. Etiam aliquam dictum nisl, vel
+        aliquet enim accumsan sit ametl accumsanteros sed magna ultricies gravida.
+        Etiam aliquam.
       </div>
-      <button (click)="toggleContent()">{{ buttonText }}</button>
+      <button class="btn-show-more" (click)="toggleContent()">ver mais</button>
     </div>
   </div>
 
@@ -194,7 +202,7 @@
         <h3 class="template-h3">Discussões</h3>
       </div>
 
-      <div class="comments-send-topic custom-border" *ngIf="!showForm">
+      <div class="comments-send-topic custom-border" *ngIf="!showForm && !formSubmitted">
         <div>
           <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
         </div>
@@ -210,11 +218,9 @@
             autor!
           </p>
         </div>
-        <button (click)="toggleForm()">
-          <img
-            src="assets/images/botao-criar-topico.png"
-            alt="botão para criar um tópico"
-          />
+        <button (click)="toggleForm()" class="btn-create-topic">
+          <img src="assets/images/icon-criar.png" alt="icone de +">
+          <p>criar tópico</p>
         </button>
       </div>
 
@@ -227,17 +233,18 @@
         </div>
         <form>
           <div>
-            <label for="assunto">Assunto:</label>
+            <label for="assunto">Assunto</label>
             <input
               type="text"
               id="assunto"
               name="assunto"
               placeholder="Defina um tópico sucinto para notificar os autores..."
+              class="subject"
             />
           </div>
 
           <div>
-            <label for="conteudo">Conteúdo:</label>
+            <label for="conteudo">Conteúdo</label>
             <textarea
               id="conteudo"
               name="conteudo"
@@ -247,16 +254,38 @@
           </div>
 
           <div>
-            <button type="button" (click)="submitForm($event)">Enviar</button>
+            <button (click)="submitForm($event)">Enviar</button>
           </div>
         </form>
       </div>
 
+      <!-- screen 3 (acknowledgment)-->
+      <div  *ngIf="formSubmitted" class="comments-send-topic-screen3 custom-border">
+        <div>
+          <h4>Seu tópico foi enviando com sucesso! :D</h4>
+        </div> 
+        
+          <p>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
+          <p>Descubra outros trabalhos!</p>
+             
+        <button (click)="createNewForm()">
+          <img src="assets/images/botao-criar-novo-topico.png" alt="botão de criar um novo tópico">
+        </button>
+      </div>
+
       <div class="comments-topics">
-        <div>
+        <!-- comentario adicionado -->
+        <div *ngIf="showTopic" class="answered-topic">
+          <div class="overlay">
+            <div>
+              <img src="assets/images/simbolo.png" alt="simbolo 'check'">
+              <p>Aguardando feedback dos autores</p>
+              <button>Editar tópico</button>
+            </div>
+          </div>
           <h5>Assunto da pergunta aparece aqui</h5>
           <p>Carlos Henrique Santos</p>
-          <p>
+          <p class="ops-topic-subject">
             Comecinho da pergunta aparece aqui resente relato inscreve-se no
             campo da análise da dimensão e impacto de processo formativo situado
             impacto de processo formativo processo...
@@ -278,8 +307,65 @@
             <div>1 resposta</div>
           </div>
         </div>
+        
+        <br />
+      
+        <!-- comentarios padroes -->
+        <div class="topics answered-topic">
+          <h5 class="ops-topic-subject">Assunto da pergunta aparece aqui</h5>
+          <p>Carlos Henrique Santos</p>
+          <p class="comments-container">
+            Comecinho da pergunta aparece aqui resente relato inscreve-se no
+            campo da análise da dimensão e impacto de processo formativo situado
+            impacto de processo formativo processo...
+          </p>
+          <div class="topics-actions">
+            <div>
+              <img
+                src="assets/images/mais-informacoes.png"
+                alt="botao de mais informações do tópico"
+              />
+            </div>
+            <div>
+              <img
+                src="assets/images/favoritar.png"
+                alt="botao de favoritar o tópico"
+              />
+            </div>
+            <div>1 like</div>
+            <div (click)="toggleComment()" class="">4 resposta</div>
+          </div>
+        </div>
+
+        
+        <!-- comments -->
+        <div *ngIf="showComments" class="topic-comments">
+          <div>          
+              <p>Adriano da Silva </p>
+              <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+          </div>
+          <div>          
+              <p>Carlos Henrique dos Santos </p>
+              <p>Consegui entender melhor agora! Parece que a variação da análise da dimensão e impacto de processo formativo situado impacto de processo formativo.
+                  <br /><br />
+                Obrigada pela resposta, muito interessante o seu trabalho! </p>
+          </div>
+          <div>          
+              <p>Camila Ferreira Andrade </p>
+              <p>Também ínteressante lembrar que o relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.
+                <br /><br />
+                Situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+          </div>
+          <div>          
+              <p>Ana Carolina </p>
+              <p>Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+          </div>
+        </div>
+        
+
         <Br />
-        <div>
+
+        <div class="topics">
           <h5>Assunto da pergunta aparece aqui</h5>
           <p>Carlos Henrique Santos</p>
           <p>
@@ -301,15 +387,14 @@
               />
             </div>
             <div>1 like</div>
-            <div>1 resposta</div>
+            <div (click)="toggleComment()">1 resposta</div>
           </div>
         </div>
-        <Br />
+
       </div>
     </div>
   </div>
 </div>
-
 <footer>
   <div>
     <div>
